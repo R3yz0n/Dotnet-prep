@@ -1,6 +1,6 @@
 ﻿// Types t = new Types();
-Swapping s = new Swapping();
+// Swapping s = new Swapping();
 
 // Goto g = new Goto();
 // Array a = new Array();
-// Strings s = new Strings();
+Strings s = new Strings();
