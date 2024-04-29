@@ -15,19 +15,23 @@ class Strings
         // String.Compare(s1,s2)
 
         string s1 = "sagar";
-        string s2 = "sagar";
+        String s2 = new String("sagar");
 
+        // == in ref type  compares memory location but in string compiler check if strings have same value clr does string interning
         System.Console.WriteLine(s1.Equals(s2));
+        System.Console.WriteLine(s1 == s2);
         System.Console.WriteLine(String.Compare(s1, s2));
+        System.Console.WriteLine(ReferenceEquals(s1, s2));
 
         // string s2 = s1;
-        // string s3 = "     sagar  thapa    ";
-        // System.Console.WriteLine(s1.ToUpper());
-        // System.Console.WriteLine(s3.Trim());
-        // System.Console.WriteLine(s3.Split(" "));
+        // string s3 = "sagar  thapa";
         // string[] s4 = s3.Split(" ");
-        // System.Console.WriteLine(s4[0]);
-        // System.Console.WriteLine(s4[1]);
+        // System.Console.WriteLine(s4.Length);
+        // foreach (var s in s4)
+        // {
+        //     System.Console.WriteLine(s);
+        // }
+
         int[] a = { 1 };
         int[] b = { 1 };
         // System.Console.WriteLine(a.GetHashCode());
@@ -36,13 +40,15 @@ class Strings
         // System.Console.WriteLine(object.ReferenceEquals(a, b));
 
 
-        System.Console.WriteLine(string.Equals(s1, s2));
 
 
-        // Conclusion
-        /*
+        string? p = (Console.ReadLine());
+        string? q = (Console.ReadLine());
 
-        */
+        System.Console.WriteLine(p == q);
+        System.Console.WriteLine(p.Equals(q));
+        System.Console.WriteLine(String.Compare(p, q));
+        System.Console.WriteLine(ReferenceEquals(p, q));
 
     }
 }
