@@ -35,9 +35,13 @@ class Types
 
 
         Test t = new Test();
+
         t.Name = "Alice";
         ModifyObj(t);
         System.Console.WriteLine(t.Name);
+        // Test[] a = new Test[5];
+        List<Test> testList = new List<Test>();
+
 
 
 
