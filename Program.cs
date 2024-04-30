@@ -8,9 +8,17 @@
 // Array a = new Array();
 // Strings s = new Strings();
 
-// Encapsulation e = new Encapsulation();
-// System.Console.WriteLine(e.Age);
 
+// ------------------------------------------------------------------------------------------------
 
+//Encapsulation Example && Data Hiding
+Encapsulation account = new Encapsulation();
+// Depositing and withdrawing money (encapsulation)
+// account.Deposit(1000);   // Direct access to the methodcl
+// account.Withdraw(1000);   // Direct access to the methodcl
 
+// ------------------------------------------------------------------------------------------------
+//Properteis & its Types
+// Properties p = new Properties();
 
+// ------------------------------------------------------------------------------------------------
