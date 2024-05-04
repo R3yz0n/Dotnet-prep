@@ -24,4 +24,6 @@ static class StaticClass
         System.Console.WriteLine("Counter value: " + counter);
     }
 
+
+
 }
