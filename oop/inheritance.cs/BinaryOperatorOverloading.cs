@@ -1,15 +1,18 @@
+// Operator overloading is a compile-time polymorphism. 
 class BinaryOperatorOverloading
 {
     internal int num;
     internal string? name;
-    public static BinaryOperatorOverloading operator +(BinaryOperatorOverloading obj1, BinaryOperatorOverloading obj2)
+
+
+    public static BinaryOperatorOverloading operator +(BinaryOperatorOverloading b1, BinaryOperatorOverloading b2)
     {
-        System.Console.WriteLine("hi");
-        BinaryOperatorOverloading obj3 = new BinaryOperatorOverloading();
-        obj3.num = obj1.num + obj2.num;
-        obj3.name = obj1.name + obj2.name;
-        return obj3;
+
+        BinaryOperatorOverloading b3 = new BinaryOperatorOverloading();
+        b3.num = b1.num + b2.num;
+        b3.name = b1.name + b2.name;
+        return b3;
+
+
     }
-
-
 }
