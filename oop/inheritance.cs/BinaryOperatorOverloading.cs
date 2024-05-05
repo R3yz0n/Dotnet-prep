@@ -13,7 +13,7 @@ class BinaryOperatorOverloading
 
         BinaryOperatorOverloading b3 = new BinaryOperatorOverloading();
         b3.num = b1.num + b2.num;
-        b3.name = b1.name + b2.name;
+        b3.name = b1.name + "  " + b2.name;
         return b3;
 
 
