@@ -203,5 +203,18 @@
 // UnaryOverloading u2 = new UnaryOverloading();
 // u2 = ++u1;
 // System.Console.WriteLine(u2.num);
+//------------------------------------------------------------------------------------------------
+
 
 //------------------------------------------------------------------------------------------------
+
+//Relational Operator Overloading
+
+// RelationalOverloading r1 = new RelationalOverloading();
+// RelationalOverloading r2 = new RelationalOverloading();
+// r1.num = 10;
+// r2.num = 10;
+// bool r3 = r1 > r2;
+// System.Console.WriteLine(r3);
+
+// --------------------------------------------------------------
