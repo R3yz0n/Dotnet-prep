@@ -9,19 +9,20 @@ class Student
 
 public class StudentCrud
 {
-    private readonly MySqlConnection _connection;
+    private MySqlConnection conn;
     public StudentCrud(MySqlConnection connection)
     {
-        _connection = connection;
+        conn = connection;
     }
 
     public void CreateTable()
     {
         try
         {
-            string createTableQuery = "CREATE TABLE IF NOT EXISTS Student (Id INT AUTO_INCREMENT PRIMARY KEY, Name VARCHAR(50))";
+            string query = "CREATE TABLE IF NOT EXISTS Student(Id INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(100), Age INT)";
+            // string query = "DROP TABLE Student";
 
-            MySqlCommand cmd = new MySqlCommand(createTableQuery, _connection);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQuery();
 
             Console.WriteLine("Student table created ✅");
@@ -36,14 +37,18 @@ public class StudentCrud
     {
         Console.WriteLine("Enter the name you want to insert: ");
         string? name = Console.ReadLine();
+        System.Console.WriteLine("Enter age");
+        int age = Convert.ToInt32(Console.ReadLine());
+        // var name = new string[] { "Sagar", "Reyzon", "Sabin", "Suman", "Sushil" };
 
         try
         {
-            string insertDataQuery = "INSERT INTO Student(Name) VALUES(@name)";
+            string query = "INSERT INTO Student(Name) VALUES(@name)";
+            // string query = "INSERT INTO Student(Name) VALUES";
 
-            MySqlCommand cmd = new MySqlCommand(insertDataQuery, _connection);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@name", name);
-            cmd.ExecuteNonQuery();
+            System.Console.WriteLine(cmd.ExecuteNonQuery());
 
             Console.WriteLine("🟢 Data insertion successful.");
         }
@@ -60,9 +65,9 @@ public class StudentCrud
 
         try
         {
-            string readDataQuery = "SELECT * FROM STUDENT";
+            string query = "SELECT * FROM STUDENT";
 
-            MySqlCommand cmd = new MySqlCommand(readDataQuery, _connection);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
 
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -101,11 +106,11 @@ public class StudentCrud
         Console.WriteLine("Enter new name:");
         string? newName = Console.ReadLine();
 
-        string updateDataQuery = "UPDATE Student SET Name =@newName WHERE Id =@id";
+        string query = "UPDATE Student SET Name =@newName WHERE Id =@id";
 
         try
         {
-            MySqlCommand cmd = new MySqlCommand(updateDataQuery, _connection);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@newName", newName);
 
@@ -130,11 +135,11 @@ public class StudentCrud
         Console.WriteLine("Enter the ID of student you want to delete:");
         int id = Convert.ToInt32(Console.ReadLine());
 
-        string deleteDataQuery = "DELETE FROM Student WHERE id=@id";
+        string query = "DELETE FROM Student WHERE id=@id";
 
         try
         {
-            MySqlCommand cmd = new MySqlCommand(deleteDataQuery, _connection);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@id", id);
 
             int rowsAffected = cmd.ExecuteNonQuery();
@@ -171,9 +176,11 @@ public class CrudApp
 
             // perform database operations
             StudentCrud studentCrud = new StudentCrud(connection);
-            studentCrud.CreateTable();
+
+
+            // studentCrud.CreateTable();
             studentCrud.InsertData();
-            studentCrud.ReadData();
+            // studentCrud.ReadData();
             // studentCrud.UpdateData();
             // studentCrud.DeleteData();
         }
