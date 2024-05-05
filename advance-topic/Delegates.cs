@@ -32,6 +32,12 @@ class SingleCastDelegate
         calculator = Subtract;
         result = calculator(45, 33);
         Console.WriteLine("After subtraction: {0}", result);
+
+
+        //USIng lamda expression
+        // calculator = (a, b) => a * b;
+        // result = calculator(45, 33);
+
     }
 
 }

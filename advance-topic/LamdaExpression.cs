@@ -2,7 +2,6 @@
 // expression tree types. Lambda expressions provide a concise way to represent methods as expressions. 
 // They are particularly useful in LINQ queries, event handling, and other scenarios where a method is expected as a
 
-using System.Security.Cryptography.X509Certificates;
 
 class LamdaExpression
 {
@@ -27,7 +26,11 @@ class LamdaExpression
         //slect from where // from where select
         var list = new List<int>() { 1, 2, 3, 4, 5 };
 
-        var evenNumbers = from n in list where n % 2 == 0 select n;
+        //Also an example of lamda expression
+
+        var evenNumbers = list.Where(l => l % 2 == 0).Distinct().Select(l => l);
+        // var evenNumberss = from e in evenNumbers where e > 2 select e;
+
 
 
     }

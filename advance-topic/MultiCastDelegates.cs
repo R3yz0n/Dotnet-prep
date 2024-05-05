@@ -25,13 +25,23 @@ class MultiCastDelegate
     {
         // instantiate the delegate 
         CalculatorDemo calculator;
-        //assigning reference to Add & Multiply method
+        // assigning reference to Add &Multiply method
         calculator = Add;
         calculator += Multiply;
 
         //Invoking the delegate
         int result = calculator(2, 3);
         System.Console.WriteLine(result);
+
+
+
+        //USIng lamda expression
+
+        // calculator = (a, b) => a + b;
+        // calculator += (a, b) => a * b;
+        // int result = calculator(2, 3);
+
+
 
 
     }
