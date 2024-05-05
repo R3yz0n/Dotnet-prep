@@ -5,7 +5,7 @@ class Generics
 
     public bool Add<T>(T a, T b)
     {
-        if (a.Equals(b))
+        if (a != null && a.Equals(b))
             return true;
         else return false;
     }
