@@ -11,8 +11,6 @@ class Animal
     public virtual int Legs { get; set; }
 
 
-
-
     public virtual void Eat()
     {
         Console.WriteLine(" Animal is Eating.");
@@ -26,7 +24,7 @@ class Dog : Animal
 {
 
     public string color;
-    public override int Legs { get; set; }
+    public override int Legs { get; set; } = 10;
 
 
     public void Bark()
@@ -45,6 +43,7 @@ class Dog : Animal
     {
         System.Console.WriteLine("Animal has " + base.color + " color.");
         Console.WriteLine("Dog has " + color + " color.");
+
         System.Console.WriteLine("Animal has " + base.Legs + " legs.");
         System.Console.WriteLine("Dog has " + Legs + " legs.");
     }
