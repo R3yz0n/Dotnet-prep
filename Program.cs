@@ -176,12 +176,32 @@
 
 //------------------------------------------------------------------------------------------------
 
-//Operator Overloading
-BinaryOperatorOverloading obj1 = new BinaryOperatorOverloading();
-BinaryOperatorOverloading obj2 = new BinaryOperatorOverloading();
-obj1.num = 10;
-obj2.num = 20;
-obj1.name = "Sagar";
-obj2.name = "thapa";
-BinaryOperatorOverloading obj3 = obj1 + obj2;
+//Binary Operator Overloading
+
+// BinaryOperatorOverloading b1 = new BinaryOperatorOverloading();
+// BinaryOperatorOverloading b2 = new BinaryOperatorOverloading();
+// b1.name = "Sagar";
+// b2.name = "Thapa";
+// b1.num = 10;
+// b1.num = 20;
+// BinaryOperatorOverloading b3 = new BinaryOperatorOverloading();
+// b3 = b1 + b2;
+// System.Console.WriteLine(b3.num);
+// System.Console.WriteLine(b3.name);
+
+//------------------------------------------------------------------------------------------------
+
+
+
+
+//------------------------------------------------------------------------------------------------
+
+//Unary Operator Overloading
+
+// UnaryOverloading u1 = new UnaryOverloading();
+// u1.num = 10;
+// UnaryOverloading u2 = new UnaryOverloading();
+// u2 = ++u1;
+// System.Console.WriteLine(u2.num);
+
 //------------------------------------------------------------------------------------------------
