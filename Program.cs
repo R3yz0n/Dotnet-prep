@@ -154,3 +154,21 @@
 
 //------------------------------------------------------------------------------------------------
 
+
+//------------------------------------------------------------------------------------------------
+//Abstract Class
+// AbstractionDemo dc = new AbstractionDemo();
+// dc.AbstractMethod();
+//------------------------------------------------------------------------------------------------
+
+
+// ************************************************************************************************
+
+// Interface can have both abstract and non abstract methods
+// Abstract can have both abstract and non abstract properties
+//Interface dont have constructor but Abstract class have constructor
+// Interface suppors multiple inheritance but Abstract class does not support single inheritance
+
+// ************************************************************************************************
+
+
