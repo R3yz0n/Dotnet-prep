@@ -172,3 +172,16 @@
 // ************************************************************************************************
 
 
+
+
+//------------------------------------------------------------------------------------------------
+
+//Operator Overloading
+BinaryOperatorOverloading obj1 = new BinaryOperatorOverloading();
+BinaryOperatorOverloading obj2 = new BinaryOperatorOverloading();
+obj1.num = 10;
+obj2.num = 20;
+obj1.name = "Sagar";
+obj2.name = "thapa";
+BinaryOperatorOverloading obj3 = obj1 + obj2;
+//------------------------------------------------------------------------------------------------
