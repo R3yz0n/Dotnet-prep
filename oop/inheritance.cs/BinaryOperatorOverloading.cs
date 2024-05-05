@@ -1,4 +1,7 @@
 // Operator overloading is a compile-time polymorphism. 
+// Operator overloading is a feature in object-oriented programming languages like C# that allows you to 
+// redefine the behavior of operators when applied to instances of custom types.
+
 class BinaryOperatorOverloading
 {
     internal int num;
