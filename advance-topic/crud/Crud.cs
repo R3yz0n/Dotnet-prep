@@ -138,7 +138,7 @@ public class MainClass
             // studentCrud.DeleteData();
         }
 
-        catch (Exception ex)
+        catch (MySqlException ex)
         {
             Console.WriteLine(ex.Message);
         }
