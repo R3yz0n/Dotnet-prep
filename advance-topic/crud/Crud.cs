@@ -15,23 +15,7 @@ public class StudentCrud
         conn = connection;
     }
 
-    public void CreateTable()
-    {
-        try
-        {
-            string query = "CREATE TABLE IF NOT EXISTS Student(Id INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(100), Age INT)";
-            // string query = "DROP TABLE Student";
 
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.ExecuteNonQuery();
-
-            Console.WriteLine("Student table created ✅");
-        }
-        catch (MySqlException ex)
-        {
-            Console.WriteLine("Error: " + ex.Message);
-        }
-    }
 
     public void InsertData()
     {
@@ -39,17 +23,15 @@ public class StudentCrud
         string? name = Console.ReadLine();
         System.Console.WriteLine("Enter age");
         int age = Convert.ToInt32(Console.ReadLine());
-        // var name = new string[] { "Sagar", "Reyzon", "Sabin", "Suman", "Sushil" };
 
         try
         {
-            string query = "INSERT INTO Student(Name) VALUES(@name)";
-            // string query = "INSERT INTO Student(Name) VALUES";
+            string query = "INSERT INTO Student(Name,age) VALUES(@name, @age)";
 
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@name", name);
-            System.Console.WriteLine(cmd.ExecuteNonQuery());
-
+            cmd.Parameters.AddWithValue("@name", age);
+            cmd.ExecuteNonQuery();
             Console.WriteLine("🟢 Data insertion successful.");
         }
         catch (MySqlException ex)
@@ -61,7 +43,6 @@ public class StudentCrud
 
     public void ReadData()
     {
-        List<Student> students = new List<Student>();
 
         try
         {
@@ -70,27 +51,17 @@ public class StudentCrud
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             MySqlDataReader reader = cmd.ExecuteReader();
+            // System.Console.WriteLine(reader.Read());
             while (reader.Read())
             {
-                int id = Convert.ToInt32(reader["Id"]);
-                string? name = reader["Name"].ToString();
+                System.Console.Write(reader["Id"]);
+                System.Console.WriteLine(reader["Name"]);
 
-                students?.Add(new Student { Id = id, Name = name });
             }
             reader.Close();
 
-            if (students?.Count > 0)
-            {
-                Console.WriteLine("List of students:");
-                foreach (Student student in students)
-                {
-                    Console.WriteLine($"ID: {student.Id}, Name: {student.Name}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("No students found.");
-            }
+
+
         }
         catch (MySqlException ex)
         {
@@ -114,15 +85,8 @@ public class StudentCrud
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@newName", newName);
 
-            int rowsAffected = cmd.ExecuteNonQuery();
-            if (rowsAffected > 0)
-            {
-                Console.WriteLine($"Student with ID {id} updated successfully.");
-            }
-            else
-            {
-                Console.WriteLine($"No student found with ID {id} to update.");
-            }
+            cmd.ExecuteNonQuery();
+
         }
         catch (MySqlException ex)
         {
@@ -142,15 +106,8 @@ public class StudentCrud
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@id", id);
 
-            int rowsAffected = cmd.ExecuteNonQuery();
-            if (rowsAffected > 0)
-            {
-                Console.WriteLine($"Student with ID {id} deleted successfully.");
-            }
-            else
-            {
-                Console.WriteLine($"No student found with ID {id} to delete.");
-            }
+            cmd.ExecuteNonQuery();
+
         }
         catch (MySqlException ex)
         {
@@ -161,7 +118,8 @@ public class StudentCrud
 }
 
 
-public class CrudApp
+
+public class MainClass
 {
     public static void Main()
     {
@@ -179,8 +137,8 @@ public class CrudApp
 
 
             // studentCrud.CreateTable();
-            studentCrud.InsertData();
-            // studentCrud.ReadData();
+            // studentCrud.InsertData();
+            studentCrud.ReadData();
             // studentCrud.UpdateData();
             // studentCrud.DeleteData();
         }
