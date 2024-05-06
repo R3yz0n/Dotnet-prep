@@ -1,11 +1,6 @@
 using System;
 using MySql.Data.MySqlClient;
 
-class Student
-{
-    public int Id { get; set; }
-    public string? Name { get; set; }
-}
 
 public class StudentCrud
 {
@@ -51,7 +46,7 @@ public class StudentCrud
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             MySqlDataReader reader = cmd.ExecuteReader();
-            // System.Console.WriteLine(reader.Read());
+            System.Console.WriteLine(reader.Read());
             while (reader.Read())
             {
                 System.Console.Write(reader["Id"]);
@@ -148,4 +143,11 @@ public class MainClass
             Console.WriteLine(ex.Message);
         }
     }
+}
+
+
+class Student
+{
+    public int Id { get; set; }
+    public string? Name { get; set; }
 }
