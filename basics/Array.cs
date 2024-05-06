@@ -17,6 +17,9 @@ class Array
         numbers = new int[5];
         System.Console.WriteLine(numbers.GetValue(0));
 
+
+
+
         //Rectangular Array
 
         int[,] rectangle = new int[2, 3] { { 1, 2, 3 }, { 4, 5, 6 } };

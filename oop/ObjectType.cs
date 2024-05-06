@@ -8,12 +8,13 @@ class ObjectType
     {
 
         Object obj1 = 10;// Boxing
-        Object obj2 = obj1; //Unboxing
+        Object obj2 = obj1;
 
-        int intz = Convert.ToInt32(obj1); //This is unboxing
         System.Console.WriteLine(Object.ReferenceEquals(obj1, obj2)); //True
 
-        //newly created boxed object
+
+        int intz = Convert.ToInt32(obj1); //This is unboxing
+
         obj1 = 20;
         System.Console.WriteLine(Object.ReferenceEquals(obj1, obj2)); //False
         System.Console.WriteLine(obj1);

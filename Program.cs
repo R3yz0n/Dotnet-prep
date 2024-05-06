@@ -32,7 +32,7 @@
 // Constructor person1 = new Constructor("sagar", "thapa");
 
 // Explicitly calling Deconstruct
-// string fn, ln;
+
 // person1.Deconstruct(out string fn, out string ln);
 // System.Console.WriteLine(fn + ln);
 
