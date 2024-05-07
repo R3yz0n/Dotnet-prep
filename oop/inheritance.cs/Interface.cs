@@ -3,7 +3,6 @@
 // Cannot be instantiated
 interface Shape
 {
-
     public abstract void hi();
     public abstract int Dimensions { get; set; }
 
